@@ -17,9 +17,9 @@ int readFileToArray(const string& filename, int arr[], int maxSize) {
     return count;
 }
 //checks if integer exists in array
-void integerExists(const int arr[], int size, int value, bool& exists) {
+void integerExists(const int arr[], int size, bool& exists) {
 	exists = false; // Initialize exists to false
-	
+	int value;
 	cout << "Enter an integer to check if it exists in the array: ";
 	cin >> value; // Read the integer to check
 	for (int i = 0; i < size; ++i) {
@@ -28,9 +28,10 @@ void integerExists(const int arr[], int size, int value, bool& exists) {
 			cout << "Integer exists in the array at index: " << i << endl;
 			return;
 		}
-		
 	}
-	
+    if (!exists) {
+        cout << "Integer does not exist in the array." << endl;
+    }
 }
 //updates value at specified index
 void updateValueAtIndex(int arr[], int size) {
@@ -50,8 +51,7 @@ void updateValueAtIndex(int arr[], int size) {
         cout << "Error: Index input is out of range for type int." << endl;
         return;
     }
-    cout << "Enter the new value: ";
-    cin >> newValueStr;
+    
     try {
             long long temp = stoll(newValueStr);
             if (temp < numeric_limits<int>::min() || temp > numeric_limits<int>::max()) {
@@ -67,7 +67,8 @@ void updateValueAtIndex(int arr[], int size) {
             cout << "Error: " << e.what() << endl;
             return;
         }
-
+cout << "Enter the new value: ";
+    cin >> newValueStr;
     if (index >= 0 && index < size) {
         
         int oldValue = arr[index];
@@ -150,10 +151,9 @@ void removeInteger(int*& arr, int& size) {
 			--size; // Decrease size
 			cout << "Integer " << value << " removed from the array." << endl;
 			cout << "Current array contents: ";
-			for (int k = 0; k < size; ++k) { // Print current array contents
-				cout << arr[k] << " ";
-			}
-			break;
+            for (int k = 0; k < size; ++k) { // Print current array contents
+                cout << arr[k] << " ";
+            }
 		}
 	}
 	if (!found) {

@@ -32,11 +32,7 @@ int main() {
         switch (choice) {
         case 1: {
             bool exists = false;
-            int target;
-            cout << "Enter integer to search for: ";
-            cin >> target;
-            integerExists(data, size, target, exists);
-            cout << (exists ? "Integer exists." : "Integer does not exist.") << endl;
+            integerExists(data, size, exists);
             break;
         }
         case 2: {
@@ -49,15 +45,17 @@ int main() {
         }
         case 4: {
 			removeInteger(data, size);  // Function to remove an integer
+			break;
         }
     
-        case 5:
+        case 5: {
             cout << "Exiting program." << endl;
             break;
+        }
         default:
             cout << "Invalid choice. Please try again." << endl;
         }
-    } while (choice != 4);  // Correct exit condition
+    } while (choice != 5);  // Correct exit condition
 
     delete[] data;  // Clean up memory
     return 0;
