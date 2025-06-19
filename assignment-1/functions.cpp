@@ -1,5 +1,5 @@
 #include "functions.h"
-
+//reads file and stores integers in array
 int readFileToArray(const string& filename, int arr[], int maxSize) {
     ifstream inFile(filename);
     int value, count = 0;
@@ -16,7 +16,7 @@ int readFileToArray(const string& filename, int arr[], int maxSize) {
     inFile.close();
     return count;
 }
-
+//checks if integer exists in array
 void integerExists(const int arr[], int size, int value, bool& exists) {
 	exists = false; // Initialize exists to false
 	
@@ -32,7 +32,7 @@ void integerExists(const int arr[], int size, int value, bool& exists) {
 	}
 	
 }
-
+//updates value at specified index
 void updateValueAtIndex(int arr[], int size) {
     string indexStr, newValueStr;
     int index, newValue;
@@ -84,6 +84,7 @@ void updateValueAtIndex(int arr[], int size) {
     }
     cout << endl;
 }
+//adds new integer to array, resizes if necessary
 void newInteger(int*& arr, int& size, int& max) {
    int newValue;  
    string newValueStr;
@@ -133,7 +134,7 @@ void newInteger(int*& arr, int& size, int& max) {
 	   }
    }  
 }
-
+//removes specified integer from array
 void removeInteger(int*& arr, int& size) {
 	bool found = false;
 	int value;

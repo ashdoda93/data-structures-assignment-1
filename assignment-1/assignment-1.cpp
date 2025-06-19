@@ -3,7 +3,7 @@
 #include "header.h"
 
 int main() {
-    const int INITIAL_CAPACITY = 100; // 100 from file + 1 extra
+    const int INITIAL_CAPACITY = 100; // 100 from file
     int maxSize = INITIAL_CAPACITY;
     int* data = new int[maxSize];  // Dynamically allocated
 
@@ -18,6 +18,7 @@ int main() {
     }
 
     int choice;
+	//Main menu loop
     do {
         cout << "\nMenu:" << endl;
         cout << "1. Check if an integer exists in the array" << endl;
