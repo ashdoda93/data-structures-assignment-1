@@ -22,7 +22,6 @@ Getting started!
    1. Check if an integer exists in the array.
       A. User types in "1".
       B. User is prompted to type in an integer.
-      ![image](https://github.com/user-attachments/assets/53688ee6-f3ec-4636-bae0-3b416695c9ad)
       C. Console outputs whether the integer is in the array or not.
-         1.) If integer is in array console will output
-      
+         1.) If integer is in array console will output as followed:
+      ![image](https://github.com/user-attachments/assets/53688ee6-f3ec-4636-bae0-3b416695c9ad)
